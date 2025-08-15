@@ -421,6 +421,103 @@ h2, h3 {
     background-color: #d4af37; /* Dorado al pasar el mouse */
 }
 
+/* Contenedor de los botones e imágenes */
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+
+/* Botones */
+#btn-info-1, #btn-info-2 {
+    background-color: #5d1917; /* Rojo oscuro */
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#btn-info-1:hover, #btn-info-2:hover {
+    background-color: #d4af37; /* Dorado al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+/* Contenedores de imágenes */
+#img-container-1, #img-container-2 {
+    display: none; /* Ocultos inicialmente */
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Imágenes */
+#img-info-1, #img-info-2 {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones de cierre */
+#close-btn-1, #close-btn-2 {
+    background-color: #5d1917; /* Rojo oscuro */
+    color: #f5f5f5;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#close-btn-1:hover, #close-btn-2:hover {
+    background-color: #d4af37; /* Dorado al pasar el mouse */
+}
+
+/* Botón de Zoom */
+.zoom-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+    display: none; /* Oculto inicialmente */
+}
+
+#img-container-1:hover .zoom-btn,
+#img-container-2:hover .zoom-btn {
+    display: block; /* Mostrar el botón al pasar el mouse sobre el contenedor */
+}
+
+.zoom-btn:hover {
+    background-color: #d4af37; /* Color dorado al pasar el mouse */
+}
+
+/* Estilo para la imagen ampliada */
+.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.5); /* Ampliar la imagen */
+    z-index: 3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
        
         
         /* Animaciones */
@@ -489,7 +586,7 @@ h2, h3 {
 
 
             <div class="card-container">
-                <div class="card">
+                <div class="card" data-section="mitos">
                     <div class="card-img">
                         <img src="https://www.visitleon.info/uploads/1/2/0/4/120453990/carnaval-de-mitos-leyendas-y-tradiciones-leonesas-nicaragua.jpg" alt="Mitos de Nicaragua">
                     </div>
@@ -499,7 +596,7 @@ h2, h3 {
                     </div>
                 </div>
                 
-                <div class="card">
+                <div class="card" data-section="leyendas">
                     <div class="card-img">
                         <img src="https://pbs.twimg.com/media/E12fXavWYAo1OA_.jpg" alt="Leyendas de Nicaragua">
                     </div>
@@ -509,7 +606,7 @@ h2, h3 {
                     </div>
                 </div>
                 
-                <div class="card">
+                <div class="card" data-section="actividades">
                     <div class="card-img">
                         <img src="https://www.visitanicaragua.com/wp-content/uploads/2024/10/Mitos-y-leyendas.jpg" alt="Actividades Interactivas">
                     </div>
@@ -524,7 +621,7 @@ h2, h3 {
         <!-- Sección Definiciones -->
         <section id="definiciones">
             <h2>Definiciones</h2>
-            <p>Antes de adentrarnos en las historias, es importante entender qué son los mitos y las leyendas, y cómo se diferencian.</p>
+            <p>En términos nicaragüenses, un mito es un relato tradicional que forma parte del folclor y la cultura popular del país. Estos mitos explican fenómenos naturales, costumbres o creencias a través de historias que involucran seres sobrenaturales, criaturas fantásticas y fuerzas misteriosas. En la tradición nicaragüense, los mitos suelen tener una fuerte conexión con la naturaleza y los misterios de la vida cotidiana en las comunidades rurales.</p>
             
             <div class="card-container">
                 <div class="card">
@@ -533,7 +630,7 @@ h2, h3 {
                     </div>
                     <div class="card-content">
                         <h3>¿Qué es un Mito?</h3>
-                        <p>Los mitos son relatos tradicionales que explican el origen del mundo, los fenómenos naturales y las costumbres de un pueblo. Suelen involucrar seres sobrenaturales como dioses, héroes o criaturas fantásticas.</p>
+                        <p>En términos nicaragüenses, un mito es un relato tradicional que forma parte del folclor y la cultura popular del país. Estos mitos explican fenómenos naturales, costumbres o creencias a través de historias que involucran seres sobrenaturales, criaturas fantásticas y fuerzas misteriosas. En la tradición nicaragüense, los mitos suelen tener una fuerte conexión con la naturaleza y los misterios de la vida cotidiana en las comunidades rurales.</p>
                     </div>
                 </div>
                 
@@ -543,7 +640,7 @@ h2, h3 {
                     </div>
                     <div class="card-content">
                         <h3>¿Qué es una Leyenda?</h3>
-                        <p>Las leyendas son narraciones tradicionales que combinan elementos reales con ficticios. A diferencia de los mitos, suelen estar situadas en un tiempo y lugar específicos, y muchas veces tienen como protagonistas a personas comunes.</p>
+                        <p>Es un relato que cuenta hechos humanos o sobrenaturales, que se transmite de generación en generación de manera oral o escrita dentro de una familia o pueblo. Las leyendas relatan hechos y sucesos relacionados con criaturas imaginarias y ánimas estando profundamente arraigadas en la cultura nicaragüense.</p>
                     </div>
                 </div>
                 
@@ -554,15 +651,33 @@ h2, h3 {
                     <div class="card-content">
                         <h3>Diferencias entre Mito y Leyenda</h3>
                         <p>Aunque ambos son relatos tradicionales, los mitos explican orígenes cósmicos o divinos, mientras que las leyendas se centran en eventos históricos o locales con elementos maravillosos.</p>
-                    </div>
-                </div>
+                      <!-- Botón 1 -->
+        <div class="button-container">
+            <button id="btn-info-1">Resumen</button>
+            <div id="img-container-1">
+                <img id="img-info-1" src="https://i.ibb.co/23Z385kZ/4-principales-diferencias-entre-el-mito-y-la-leyenda-4572-2-orig.jpg" alt="Información adicional 1" />
+                  <button id="zoom-btn-1" class="zoom-btn">Zoom</button>
+                <button id="close-btn-1">Cerrar</button>
             </div>
+        </div>
+
+        <!-- Botón 2 -->
+        <div class="button-container">
+            <button id="btn-info-2">Cuadro comparativo</button>
+            <div id="img-container-2">
+                <img id="img-info-2" src="https://i.ibb.co/xtfsDKr1/comparacion.png" alt="Información adicional 2" />
+                <button id="zoom-btn-2" class="zoom-btn">Zoom</button>
+                <button id="close-btn-2">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
         </section>
         
         <!-- Sección Mitos Populares -->
         <section id="mitos">
             <h2>Mitos Populares de Nicaragua</h2>
-            <p>Nicaragua cuenta con una rica tradición de mitos que forman parte de su patrimonio cultural. Estos son algunos de los más conocidos:</p>
+            <p>En términos nicaragüenses, un mito es un relato tradicional que forma parte del folclor y la cultura popular del país. Estos mitos explican fenómenos naturales, costumbres o creencias a través de historias que involucran seres sobrenaturales, criaturas fantásticas y fuerzas misteriosas. En la tradición nicaragüense, los mitos suelen tener una fuerte conexión con la naturaleza y los misterios de la vida cotidiana en las comunidades rurales.</p>
             
             <div class="card-container">
                 <div class="card">
@@ -866,21 +981,29 @@ h2, h3 {
             this.classList.add('selected');
         }
 
-        function continueSelection(e) {
-            if (selectedCells.length > 0 && !this.classList.contains('selected')) {
-                const lastCell = selectedCells[selectedCells.length - 1];
-                const lastRow = parseInt(lastCell.dataset.row);
-                const lastCol = parseInt(lastCell.dataset.col);
-                const currentRow = parseInt(this.dataset.row);
-                const currentCol = parseInt(this.dataset.col);
-                const rowDiff = Math.abs(currentRow - lastRow);
-                const colDiff = Math.abs(currentCol - lastCol);
-                if ((rowDiff <= 1 && colDiff <= 1) && (rowDiff === 0 || colDiff === 0 || rowDiff === colDiff)) {
-                    this.classList.add('selected');
-                    selectedCells.push(this);
-                }
-            }
+       function continueSelection(e) {
+    if (selectedCells.length > 0 && !this.classList.contains('selected')) {
+        const lastCell = selectedCells[selectedCells.length - 1];
+        const lastRow = parseInt(lastCell.dataset.row);
+        const lastCol = parseInt(lastCell.dataset.col);
+        const currentRow = parseInt(this.dataset.row);
+        const currentCol = parseInt(this.dataset.col);
+
+        // Calcular las diferencias entre filas y columnas
+        const rowDiff = currentRow - lastRow;
+        const colDiff = currentCol - lastCol;
+
+        // Verificar si la celda actual está en la misma dirección (horizontal, vertical o diagonal)
+        if (
+            (rowDiff === 0 && colDiff !== 0) || // Horizontal
+            (colDiff === 0 && rowDiff !== 0) || // Vertical
+            (Math.abs(rowDiff) === Math.abs(colDiff)) // Diagonal
+        ) {
+            this.classList.add('selected');
+            selectedCells.push(this);
         }
+    }
+}
 
         function endSelection() {
             if (selectedCells.length > 1) {
@@ -960,6 +1083,116 @@ document.getElementById('close-img-btn').addEventListener('click', function () {
     imgContainer.style.display = 'none'; // Oculta el contenedor de la imagen
 });
     });
+
+    // Agregar funcionalidad de clic a las tarjetas
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', function () {
+        const sectionId = this.getAttribute('data-section');
+        const section = document.getElementById(sectionId);
+        if (section) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+            // Mostrar la sección correspondiente
+            section.classList.add('active');
+            // Desplazarse suavemente hacia la sección
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+// Funcionalidad para el botón 1
+document.getElementById('btn-info-1').addEventListener('click', function () {
+    const imgContainer = document.getElementById('img-container-1');
+    imgContainer.style.display = 'block'; // Muestra el contenedor de la imagen
+});
+
+document.getElementById('close-btn-1').addEventListener('click', function () {
+    const imgContainer = document.getElementById('img-container-1');
+    imgContainer.style.display = 'none'; // Oculta el contenedor de la imagen
+});
+
+// Funcionalidad para el botón 2
+document.getElementById('btn-info-2').addEventListener('click', function () {
+    const imgContainer = document.getElementById('img-container-2');
+    imgContainer.style.display = 'block'; // Muestra el contenedor de la imagen
+});
+
+document.getElementById('close-btn-2').addEventListener('click', function () {
+    const imgContainer = document.getElementById('img-container-2');
+    imgContainer.style.display = 'none'; // Oculta el contenedor de la imagen
+});
+
+// Función para mostrar la imagen en un modal
+function showImageInModal(imageSrc) {
+    // Crear el contenedor del modal
+    const modal = document.createElement('div');
+    modal.id = 'image-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    modal.style.display = 'flex';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+    modal.style.zIndex = '1000';
+
+    // Crear la imagen dentro del modal
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.style.maxWidth = '90%';
+    img.style.maxHeight = '90%';
+    img.style.borderRadius = '8px';
+    img.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.5)';
+
+    // Crear el botón de cierre
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Cerrar';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '20px';
+    closeButton.style.right = '20px';
+    closeButton.style.backgroundColor = '#5d1917';
+    closeButton.style.color = '#f5f5f5';
+    closeButton.style.border = 'none';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.fontWeight = 'bold';
+    closeButton.style.transition = 'background-color 0.3s ease';
+
+    closeButton.addEventListener('mouseover', () => {
+        closeButton.style.backgroundColor = '#d4af37';
+    });
+
+    closeButton.addEventListener('mouseout', () => {
+        closeButton.style.backgroundColor = '#5d1917';
+    });
+
+    // Cerrar el modal al hacer clic en el botón de cierre
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+
+    // Agregar la imagen y el botón al modal
+    modal.appendChild(img);
+    modal.appendChild(closeButton);
+
+    // Agregar el modal al cuerpo del documento
+    document.body.appendChild(modal);
+}
+
+// Funcionalidad para el botón de Zoom en la imagen 1
+document.getElementById('zoom-btn-1').addEventListener('click', function () {
+    const imgSrc = document.getElementById('img-info-1').src;
+    showImageInModal(imgSrc);
+});
+
+// Funcionalidad para el botón de Zoom en la imagen 2
+document.getElementById('zoom-btn-2').addEventListener('click', function () {
+    const imgSrc = document.getElementById('img-info-2').src;
+    showImageInModal(imgSrc);
+});
     </script>
 </body> 
 </html>
