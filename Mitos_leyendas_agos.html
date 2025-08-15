@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mitos y Leyendas de Nicaragua</title>
     <style>
-        /* Estilos generales */
+        /* [Todo el CSS original se mantiene igual] */
+         /* Estilos generales */
         * {
             margin: 0;
             padding: 0;
@@ -455,13 +456,11 @@ h2, h3 {
             }
         }
 
-        
     </style>
 </head>
 <body>
-    <header>
-       
-    </header>
+    <!-- [Todo el HTML original se mantiene igual] -->
+    <header></header>
     
     <nav>
         <ul>
@@ -474,7 +473,7 @@ h2, h3 {
     </nav>
     
     <div class="container">
-        <!-- Sección Inicio -->
+       <!-- Sección Inicio -->
         <section id="inicio" class="active">
             <h2>Bienvenidos al Mundo Mágico de Nicaragua</h2>
             <p>Nicaragua, tierra de lagos y volcanes, es también un país rico en tradiciones y cultura popular. Entre sus tesoros más valiosos se encuentran los mitos y leyendas que han sido transmitidos de generación en generación, formando parte fundamental de la identidad nicaragüense.</p>
@@ -735,21 +734,43 @@ h2, h3 {
     </footer>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        
-        // Navegación entre secciones
-       document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    // Oculta todas las secciones
-    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-    // Muestra solo la seleccionada
-    document.getElementById(this.dataset.section).classList.add('active');
-  });
-});
+    // Código JS corregido (misma funcionalidad pero con soluciones)
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Navegación entre secciones (corregido)
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                const sectionId = this.getAttribute('data-section');
+                if(document.getElementById(sectionId)) {
+                    document.getElementById(sectionId).classList.add('active');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
 
-        // Cuestionario
-        document.getElementById('check-quiz').addEventListener('click', function() {
+        // 2. Botones de imagen (corregido)
+        const objetivoBtn = document.getElementById('objetivo-btn');
+        const closeBtn = document.getElementById('close-img-btn');
+        
+        if(objetivoBtn) {
+            objetivoBtn.addEventListener('click', function() {
+                const imgContainer = document.getElementById('objetivo-img-container');
+                if(imgContainer) imgContainer.style.display = 'block';
+            });
+        }
+        
+        if(closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                const imgContainer = document.getElementById('objetivo-img-container');
+                if(imgContainer) imgContainer.style.display = 'none';
+            });
+        }
+
+        // 3. Cuestionario (original)
+        document.getElementById('check-quiz')?.addEventListener('click', function() {
             const answers = { q1: 'b', q2: 'c', q3: 'd' };
             let score = 0;
             for (let i = 1; i <= 3; i++) {
@@ -759,8 +780,10 @@ h2, h3 {
                 }
             }
             const resultElement = document.getElementById('quiz-result');
-            resultElement.textContent = `Obtuviste ${score} de 3 respuestas correctas.`;
-            resultElement.style.color = score === 3 ? 'green' : score >= 1 ? 'orange' : 'red';
+            if(resultElement) {
+                resultElement.textContent = `Obtuviste ${score} de 3 respuestas correctas.`;
+                resultElement.style.color = score === 3 ? 'green' : score >= 1 ? 'orange' : 'red';
+            }
         });
 
         // Sopa de letras
@@ -881,7 +904,7 @@ h2, h3 {
             selectedCells = [];
         }
 
-        // Completar espacios
+         // Completar espacios
         document.querySelectorAll('.blank').forEach(blank => {
             blank.addEventListener('click', function() {
                 this.textContent = this.dataset.answer;
@@ -936,7 +959,7 @@ document.getElementById('close-img-btn').addEventListener('click', function () {
     const imgContainer = document.getElementById('objetivo-img-container');
     imgContainer.style.display = 'none'; // Oculta el contenedor de la imagen
 });
-});
+    });
     </script>
-</body>
+</body> 
 </html>
